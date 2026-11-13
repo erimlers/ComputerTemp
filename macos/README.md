@@ -35,9 +35,12 @@ Select the `ComputerTempMac` scheme and press **Run (`⌘R`)**.
 
 ### Building a `.app` Bundle & Release `.zip`
 ```bash
-./macos/scripts/build-app.sh 1.0.0
+./macos/scripts/build-app.sh 1.1.0
 ```
 Outputs `macos/dist/ComputerTemp.app` and `macos/dist/ComputerTemp-macOS.zip`.
+
+> **First Launch Note (macOS Gatekeeper):** Because the app is not notarized with a paid Apple Developer ID, macOS may show an *"Apple could not verify..."* warning on first launch. To open it:
+> 1. Go to **System Settings -> Privacy & Security** and click **Open Anyway** (or run `xattr -cr /Applications/ComputerTemp.app` in Terminal).
 
 ### Running Tests
 ```bash
